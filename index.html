@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Four Times Four</title>
+    <meta
+        name="description"
+        content="Four quick daily games. One new challenge every day."
+    >
+
+    <link rel="icon" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <button class="brand" onclick="showHome()">
+        <div class="brand-mark">4×4</div>
+        <div class="brand-name">FOUR TIMES FOUR</div>
+    </button>
+
+    <div class="header-actions">
+        <button class="icon-button" id="themeButton" aria-label="Toggle theme">
+            ☼
+        </button>
+
+        <button class="icon-button" id="statsButton" aria-label="Statistics">
+            ♙
+        </button>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HOME -->
+
+    <section id="homeScreen" class="screen active">
+
+        <div class="hero">
+            <p class="eyebrow" id="todayLabel">TODAY</p>
+
+            <h1>
+                Four games.<br>
+                One new day.
+            </h1>
+
+            <p class="hero-subtitle">
+                Take a few minutes. See how you do.
+            </p>
+        </div>
+
+
+        <div class="game-grid">
+
+            <button class="game-card shift-card" onclick="openGame('shift')">
+                <div class="game-number">01</div>
+
+                <div class="game-icon">↔</div>
+
+                <div class="game-info">
+                    <h2>SHIFT</h2>
+                    <p>Transform the board.</p>
+                </div>
+
+                <div class="play-arrow">→</div>
+
+                <div class="completed" id="completed-shift">✓</div>
+            </button>
+
+
+            <button class="game-card clue-card" onclick="openGame('oneclue')">
+                <div class="game-number">02</div>
+
+                <div class="game-icon">?</div>
+
+                <div class="game-info">
+                    <h2>ONE CLUE</h2>
+                    <p>One clue. One answer.</p>
+                </div>
+
+                <div class="play-arrow">→</div>
+
+                <div class="completed" id="completed-oneclue">✓</div>
+            </button>
+
+
+            <button class="game-card remember-card" onclick="openGame('remember')">
+                <div class="game-number">03</div>
+
+                <div class="game-icon">◉</div>
+
+                <div class="game-info">
+                    <h2>REMEMBER</h2>
+                    <p>Look closely.</p>
+                </div>
+
+                <div class="play-arrow">→</div>
+
+                <div class="completed" id="completed-remember">✓</div>
+            </button>
+
+
+            <button class="game-card seconds-card" onclick="openGame('thirty')">
+                <div class="game-number">04</div>
+
+                <div class="game-icon">30</div>
+
+                <div class="game-info">
+                    <h2>30 SECONDS</h2>
+                    <p>Think fast.</p>
+                </div>
+
+                <div class="play-arrow">→</div>
+
+                <div class="completed" id="completed-thirty">✓</div>
+            </button>
+
+        </div>
+
+
+        <div class="streak-card">
+            <div>
+                <span class="streak-label">CURRENT STREAK</span>
+                <strong id="streakNumber">0</strong>
+            </div>
+
+            <div class="streak-fire">🔥</div>
+        </div>
+
+    </section>
+
+
+    <!-- GAME SCREEN -->
+
+    <section id="gameScreen" class="screen">
+
+        <button class="back-button" onclick="showHome()">
+            ← All games
+        </button>
+
+        <div id="gameContainer"></div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section id="statsScreen" class="screen">
+
+        <button class="back-button" onclick="showHome()">
+            ← Back
+        </button>
+
+        <div class="stats-page">
+
+            <p class="eyebrow">YOUR STATS</p>
+
+            <h1>Your progress.</h1>
+
+            <div class="big-stat">
+                <span>🔥</span>
+                <strong id="statsStreak">0</strong>
+                <small>day streak</small>
+            </div>
+
+            <div class="stat-grid">
+
+                <div class="stat-box">
+                    <strong id="gamesPlayed">0</strong>
+                    <span>Games played</span>
+                </div>
+
+                <div class="stat-box">
+                    <strong id="gamesCompleted">0</strong>
+                    <span>Games completed</span>
+                </div>
+
+                <div class="stat-box">
+                    <strong id="perfectDays">0</strong>
+                    <span>Perfect days</span>
+                </div>
+
+                <div class="stat-box">
+                    <strong id="totalScore">0</strong>
+                    <span>Total score</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <span>FOUR TIMES FOUR</span>
+    <span>© <span id="year"></span></span>
+</footer>
+
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
